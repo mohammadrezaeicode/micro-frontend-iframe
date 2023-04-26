@@ -4,6 +4,13 @@
   "description": "micro-frontend with iframe",
   "main": "index.js",
   "scripts": {
+    "nuxt:install": "npm ----prefix ./nuxt-app install",
+    "astro:install": "npm  --prefix ./astro-app install",
+    "angular:install": "npm  --prefix ./angular-app install",
+    "react:install": "npm  --prefix ./react-app install",
+    "next:install": "npm  --prefix ./next-app install",
+    "svelte:install": "npm  --prefix ./svelte-app install",
+    "install": "concurrently \"npm:nuxt:install\" \"npm:astro:install\" \"npm:angular:install\" \"npm:react:install\" \"npm:svelte:install\" \"npm:next:install\"",
     "nuxt": "npm run --prefix ./nuxt-app build&&npm run --prefix ./nuxt-app generate",
     "astro": "npm run --prefix ./astro-app build",
     "angular": "npm run --prefix ./angular-app build",

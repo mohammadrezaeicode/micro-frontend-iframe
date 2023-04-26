@@ -14,8 +14,13 @@ We can use `postMessage`, `CustomEvent` for communication between frameworks. Al
 
 ### **Installation**
 in window run `install.bat` and for Linux and Mac use `install.bash`
-<br><br>
+OR
+call the below command in the root directory
+```bash
+npm install
+```
 
+<br><br>
 ### **Run Applications `(dev mode)`**
 call the below command in the root directory
 ```bash
