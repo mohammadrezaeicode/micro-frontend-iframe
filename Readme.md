@@ -40,3 +40,7 @@ npm start
 
 ### **Other Approch**
 `Module federation` in `Webpack` is one of the best ways to create a micro frontend app. but `iframe` can be used for most situations.
+### **Versions**
+Project version:1.0.0
+Node version:18.14.2
+npm version:9.5.0

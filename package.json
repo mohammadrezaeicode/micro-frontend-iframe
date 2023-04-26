@@ -1,0 +1,44 @@
+{
+  "name": "micro-frontend-app",
+  "version": "1.0.0",
+  "description": "micro-frontend with iframe",
+  "main": "index.js",
+  "scripts": {
+    "nuxt": "npm run --prefix ./nuxt-app build&&npm run --prefix ./nuxt-app generate",
+    "astro": "npm run --prefix ./astro-app build",
+    "angular": "npm run --prefix ./angular-app build",
+    "react": "npm run --prefix ./react-app build",
+    "next": "npm run --prefix ./next-app build",
+    "svelte": "npm run --prefix ./svelte-app build",
+    "move": "node move.js",
+    "build": "concurrently \"npm:nuxt\" \"npm:astro\" \"npm:angular\" \"npm:react\" \"npm:svelte\" \"npm:next\" &&npm run move",
+    "start": "serve dist",
+    "nuxt:dev": "npm run --prefix ./nuxt-app dev",
+    "astro:dev": "npm run --prefix ./astro-app dev",
+    "angular:dev": "npm run --prefix ./angular-app start",
+    "react:dev": "npm run --prefix ./react-app start",
+    "next:dev": "npm run --prefix ./next-app dev",
+    "svelte:dev": "npm run --prefix ./svelte-app dev",
+    "dev": "concurrently \"npm:nuxt:dev\" \"npm:astro:dev\" \"npm:angular:dev\" \"npm:react:dev\" \"npm:svelte:dev\" \"npm:next:dev\""
+  },
+  "keywords": [
+    "iframe",
+    "micro-frontend",
+    "micro-frontend angular",
+    "micro-frontend nuxt",
+    "micro-frontend next",
+    "micro-frontend astro",
+    "micro-frontend svelte",
+    "angular",
+    "nuxt",
+    "next",
+    "astro",
+    "svelte"
+  ],
+  "author": "M.R",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.0.1",
+    "serve": "^14.2.0"
+  }
+}

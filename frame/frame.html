@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>this is frame</title>
+</head>
+
+<body>
+    <p>frame body</p>
+    <script>
+        window.addEventListener('storage', function () {
+            console.log('frame')
+        })
+        setTimeout(() => {
+            console.log('test3')
+        }, 150)
+        window.addEventListener(
+            "message",
+            (event) => {
+                console.log('onmassage', event)
+                if (event.data == 'hello') {
+                    console.log('yes')
+                }
+            });
+        var data = { foo: 'bar' }
+        var event = new CustomEvent('myCustomEvent', { detail: data })
+        window.parent.document.dispatchEvent(event)
+        window.top.postMessage('hello', '*')
+        console.log(window,window.testObj)
+    </script>
+</body>
+
+</html>
