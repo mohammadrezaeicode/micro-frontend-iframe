@@ -34,7 +34,7 @@ npm run next:install
 
 <br><br>
 ### **Run Applications `(dev mode)`**
-call the below command in the root directory
+call the below command in the root directory (`nuxt port: 3000`)
 ```bash
 npm run dev
 ```
@@ -48,7 +48,7 @@ npm run build
 <br>
 
 ### **Run Applications `(prod mode)`**
-call the below commands in the root directory
+call the below commands in the root directory 
 ```bash
 npm run build
 npm start
@@ -61,3 +61,24 @@ npm start
 Project version:1.0.0
 Node version:18.14.2
 npm version:9.5.0
+
+### **problem solution**
+if the run has the below error
+```diff
+node:internal/crypto/hash:71
+  this[kHandle] = new _Hash(algorithm, xofLen);
+                  ^
+
+Error: error:0308010C:digital envelope routines::unsupported
+```
+add below option. [stackoverflow](https://stackoverflow.com/questions/69692842/error-message-error0308010cdigital-envelope-routinesunsupported)
+```diff
+---On Unix-like (Linux, macOS, Git bash, etc.):
+export NODE_OPTIONS=--openssl-legacy-provider
+
+---On Windows command prompt:
+set NODE_OPTIONS=--openssl-legacy-provider
+
+---On PowerShell:
+$env:NODE_OPTIONS = "--openssl-legacy-provider"
+```
