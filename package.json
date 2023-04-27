@@ -18,7 +18,7 @@
     "next": "npm run --prefix ./next-app build",
     "svelte": "npm run --prefix ./svelte-app build",
     "move": "node move.js",
-    "build": "concurrently \"npm:nuxt\" \"npm:astro\" \"npm:angular\" \"npm:react\" \"npm:svelte\" \"npm:next\" &&npm run move",
+    "build": "concurrently \"npm:nuxt\" \"npm:astro\" \"npm:angular\" \"npm:react\" \"npm:svelte\" \"npm:next\" && npm run move",
     "start": "serve dist",
     "nuxt:dev": "npm run --prefix ./nuxt-app dev",
     "astro:dev": "npm run --prefix ./astro-app dev",

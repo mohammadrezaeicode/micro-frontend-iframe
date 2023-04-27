@@ -15,9 +15,19 @@ We can use `postMessage`, `CustomEvent` for communication between frameworks. Al
 ### **Installation**
 in window run `install.bat` and for Linux and Mac use `install.bash`
 OR
-call the below command in the root directory
-```bash
+call the below command in the root directory. <br><span style="color:red;">if there is a problem in installation in the blow commands, please install by project one by one in the root of them.</span>
+
+```diff
 npm install
+
+---OR
+
+npm run nuxt:install 
+npm run astro:install 
+npm run angular:install 
+npm run react:install 
+npm run svelte:install 
+npm run next:install
 ```
 
 <br><br>
