@@ -15,10 +15,12 @@ We can use `postMessage`, `CustomEvent` for communication between frameworks. Al
 ### **Installation**
 in window run `install.bat` and for Linux and Mac use `install.bash`
 OR
-call the below command in the root directory. <br><span style="color:red;">if there is a problem in installation in the blow commands, please install by project one by one in the root of them.</span>
+call the below command in the root directory. <br><span style="color:red;">if there is a problem in installation in the blow commands, please install project one by one in the root of them.</span>
 
 ```diff
-npm install
+
+npm run install-multi
+npm run install-single
 
 ---OR
 
