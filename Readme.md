@@ -61,8 +61,13 @@ npm start
 Project version:1.0.0
 Node version:18.14.2
 npm version:9.5.0
-
-### **problem solution**
+<br>
+<br>
+### **`Problem Solution`**
+#### **Scroll & Dialog(pop up)**
+for those problems see `scroll` & `dialog` 
+<br>
+#### **Errors**
 if the run has the below error
 ```diff
 node:internal/crypto/hash:71

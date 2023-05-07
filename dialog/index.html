@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            /* width: 100vw; */
+            height: 100vh;
+            background-color: red;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <iframe src="./frame.html" scrolling="no" style="width: 100%;" frameborder="0"></iframe>
+    <p>this is parent element</p>
+    <script>
+        window.onload = function () {
+            var iframe = document.querySelector("iframe")
+            window.addEventListener("message", function (message) {
+                if (typeof message.data == "object" && 'dialog' in message.data) {
+                    console.log('yes' + message.data.dialog)
+                    if (message.data.dialog) {
+                        iframe.style.position = "fixed"
+                        iframe.style.top = "0"
+                        iframe.style.left = "0"
+                        iframe.style.right = "0"
+                        iframe.style.bottom = "0"
+                        iframe.style.height = "100%"
+
+                    } else {
+                        iframe.style.position = ""
+                        iframe.style.top = ""
+                        iframe.style.left = ""
+                        iframe.style.right = ""
+                        iframe.style.bottom = ""
+                        iframe.style.height = ""
+                    }
+                    // console.log(message.data, message.data["dialog"].height + "px", Math.round(message.data["dialog"].height) + "px")
+                    // document.querySelector('iframe').style.height = Math.round(message.data["dialog"].height) + "px"
+                }
+
+            })
+        }
+    </script>
+</body>
+
+</html>

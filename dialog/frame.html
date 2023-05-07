@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>this is frame</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            background: white;
+            overflow: hidden;
+        }
+
+        .dialog {
+            display: none;
+            background: rgb(54, 54, 54);
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            padding: 1rem;
+            /* display: flex; */
+
+            justify-content: center;
+            align-items: center;
+        }
+
+        .dialog-content {
+            padding: 1rem;
+            background-color: #7d1d1d;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p>****start frame****</p>
+    <button>show dialog</button>
+    <p>****end frame****</p>
+    <div class="dialog">
+        <div class="dialog-content">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque quia quam maxime culpa, natus quidem, sit
+            asperiores earum quo minima veniam aspernatur, quibusdam iure reiciendis neque. Tempora consectetur
+            molestiae inventore tempore.
+        </div>
+    </div>
+    <!-- <br> <br> <br> <br> <br> -->
+    <script>
+        window.onload = function () {
+            var dialogEl = document.querySelector(".dialog")
+            var bodyEl = document.querySelector("body")
+            var isDialogOpen = false
+            function changeDialog() {
+                isDialogOpen = !isDialogOpen
+                window.top.postMessage({
+                    dialog: isDialogOpen
+                }, '*')
+            }
+            var bodyRect = bodyEl.getBoundingClientRect()
+            window.top.postMessage({
+                frameBody: bodyRect
+            }, "*")
+            bodyEl.addEventListener("click", function (event) {
+                console.log(event + "ff")
+                if (isDialogOpen) {
+                    dialogEl.style.display = 'none'
+                    changeDialog()
+                }
+            })
+            document.querySelector('button').addEventListener("click", function (event) {
+                event.stopPropagation()
+                console.log(event)
+                if (isDialogOpen) {
+                    dialogEl.style.display = 'none'
+                } else {
+                    dialogEl.style.display = 'flex'
+                }
+                changeDialog()
+            })
+        }
+    </script>
+</body>
+
+</html>
